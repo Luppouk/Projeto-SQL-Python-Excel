@@ -1,0 +1,42 @@
+/*create database univap;
+use univap;
+create table disciplinas (
+codigodisc int primary key not null,
+nomedisc varchar(50)
+);
+create table professores(
+registro int primary key not null,
+nomeprof varchar(50),
+telefoneprof varchar(30),
+idadeprof int,
+salarioprof float);
+create table disciplinas(
+codigodisc int primary key not null,
+nomedisc varchar(50));
+create table disciplinasxprofessores(
+codigodisciplinacurso int(10) primary key not null auto_increment,
+coddisciplina int,
+codprofessor int,
+curso int,
+cargahoraria int,
+anoletivo int,
+foreign key(coddisciplina) references disciplinas(codigodisc),
+foreign key(codprofessor) references professores(registro)
+);
+insert into disciplinas values (100, "POOI");
+insert into disciplinas values (200, "POOII");
+insert into disciplinas values (300, "POOIII");
+insert into disciplinas values (400, "POOIV");
+insert into disciplinasxprofessores values (1000, 100, 1, 1, 20, 2021);	
+insert into disciplinasxprofessores values (2000, 100, 1, 2, 20, 2021);
+insert into disciplinasxprofessores values (3000, 200, 2, 1, 40, 2021);
+insert into disciplinasxprofessores values (4000, 300, 3, 2, 50, 2022);
+insert into disciplinasxprofessores values (5000, 200, 2, 3, 40, 2021);
+insert into disciplinasxprofessores values (6000, 100, 1, 4, 20, 2022);
+insert into disciplinasxprofessores values (7000, 400, 4, 1, 80, 2021);
+insert into professores values (1, 'A', 999, 20, 100);
+insert into professores values (2, 'B', 998, 30, 200);
+insert into professores values (3, 'C', 997, 40, 300);
+insert into professores values (4, 'D', 996, 50, 400);
+
+/*
